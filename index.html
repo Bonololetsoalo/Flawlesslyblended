@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="oXhlHkVzCjX4J4ZGJVd5jpfNQPqVQONa-KQs07UaQ5Q" />
+    <title>Flawlessly Blended</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Site header displaying the brand name -->
+    <header>Flawlessly Blended</header>
+
+    <!-- Main navigation menu with hamburger for mobile -->
+    <nav>
+        <!-- Hamburger button - only visible on mobile -->
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Nav links - collapse into hamburger on mobile -->
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Pricing</a>
+            <a href="enquiry.html">Booking</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero/welcome section introducing the business -->
+    <section>
+        <h1>Welcome to Flawlessly Blended</h1>
+        <p>Your one-stop beauty solution. Professional makeup services for every occasion.</p>
+    </section>
+
+    <!-- Brand logo image -->
+    <img src="images/logo.png.jpg" alt="Flawlessly Blended Logo" class="logo">
+
+    <!-- About Us section describing the business -->
+    <section>
+        <h2>About Us</h2>
+        <p>We pride ourselves in providing quality service, making every client feel special and beautiful.</p>
+    </section>
+
+    <!-- Footer with copyright, social media, and contact info -->
+    <footer>
+        &copy; 2024 Flawlessly Blended | IG: @flawlessly.blended | +27 68 082 4771
+        <p class="dev-credit">Bonolo Letsoalo</p>
+    </footer>
+
+    <!-- JavaScript: toggles mobile hamburger menu open and closed -->
+  <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>

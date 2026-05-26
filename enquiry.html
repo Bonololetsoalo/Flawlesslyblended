@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking | Flawlessly Blended</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Site header displaying the brand name -->
+  <header>Flawlessly Blended</header>
+<!-- Main navigation menu with hamburger for mobile -->
+<nav>
+    <!-- Hamburger button - only visible on mobile -->
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Nav links - collapse into hamburger on mobile -->
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="services.html">Pricing</a>
+        <a href="enquiry.html">Booking</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+  <!-- Booking section with appointment request form -->
+  <section>
+    <h1>Book Your Appointment</h1>
+    <p>Fill out the form below and send us a WhatsApp message to secure your booking.</p>
+
+    <!-- Booking form - submits via WhatsApp on submit -->
+    <form id="bookingForm">
+
+      <!-- Client full name input -->
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Service selection dropdown -->
+      <label for="service">Select Service:</label>
+      <select id="service" name="service" required>
+        <option value="">--Select--</option>
+        <option value="Natural Glam">Natural Glam (R230)</option>
+        <option value="Soft Glam">Soft Glam (R300)</option>
+        <option value="Soft Glam + Lashes">Soft Glam + Lashes (R330)</option>
+        <option value="Full Glam">Full Glam (R400)</option>
+        <option value="Full Glam + Lashes">Full Glam + Lashes (R430)</option>
+      </select>
+
+      <!-- Preferred appointment date -->
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <!-- Preferred appointment time -->
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" name="time" required>
+
+      <!-- Optional special requests from client -->
+      <label for="notes">Additional Notes:</label>
+      <textarea id="notes" name="notes" placeholder="Any special requests..."></textarea>
+
+      <!-- Submit button triggers WhatsApp message -->
+      <button type="submit">Send Booking via WhatsApp</button>
+
+    </form>
+  </section>
+
+  <!-- Footer with copyright, social media, and contact info -->
+  <footer>
+    &copy; 2025 Flawlessly Blended | IG: @flawlessly.blended | +27 68 082 4771
+    <p class="dev-credit">Bonolo Letsoalo</p>
+  </footer>
+
+  <!-- builds WhatsApp message from form data and opens link -->
+  <script>
+    // JavaScript: toggles mobile hamburger menu open and closed
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('open');
+    }
+
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = encodeURIComponent(document.getElementById('name').value);
+      const service = encodeURIComponent(document.getElementById('service').value);
+      const date = encodeURIComponent(document.getElementById('date').value);
+      const time = encodeURIComponent(document.getElementById('time').value);
+      const notes = encodeURIComponent(document.getElementById('notes').value);
+
+      const message = `Hello! I would like to book a Flawlessly Blended appointment.%0AName: ${name}%0AService: ${service}%0ADate: ${date}%0ATime: ${time}%0ANotes: ${notes}`;
+      const whatsappNumber = "+27680824771";
+      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+      window.open(whatsappLink, '_blank');
+    });
+  </script>
+
+</body>
+</html>

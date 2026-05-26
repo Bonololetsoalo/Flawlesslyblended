@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Flawlessly Blended</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Site header displaying the brand name -->
+    <header>Flawlessly Blended</header>
+
+<!-- Main navigation menu with hamburger for mobile -->
+<nav>
+    <!-- Hamburger button - only visible on mobile -->
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Nav links - collapse into hamburger on mobile -->
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="services.html">Pricing</a>
+        <a href="enquiry.html">Booking</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+    <!-- Pricing section listing all available makeup services -->
+    <section>
+        <h1>Our Services &amp; Pricing</h1>
+
+        <!-- Pricing cards container - each card is one service -->
+        <div class="pricing-table">
+
+            <!-- Individual service pricing cards -->
+            <div class="pricing-card">
+                <h2>Natural Glam</h2>
+                <p class="price">R230</p>
+                <p>Lashes Excluded</p>
+            </div>
+
+            <div class="pricing-card">
+                <h2>Soft Glam</h2>
+                <p class="price">R300</p>
+            </div>
+
+            <div class="pricing-card">
+                <h2>Soft Glam + Lashes</h2>
+                <p class="price">R330</p>
+            </div>
+
+            <div class="pricing-card">
+                <h2>Full Glam</h2>
+                <p class="price">R400</p>
+            </div>
+
+            <div class="pricing-card">
+                <h2>Full Glam + Lashes</h2>
+                <p class="price">R430</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer with copyright, social media, and contact info -->
+    <footer>
+        &copy; 2024 Flawlessly Blended | IG: @flawlessly.blended | +27 68 082 4771
+        <p class="dev-credit">Bonolo Letsoalo</p>
+    </footer>
+
+<script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
